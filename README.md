@@ -1,5 +1,5 @@
 # 栢森（Bisem）中文语义纠错系统
-##程序由三部分构成：</br>
+# #程序由三部分构成：</br>
 【已完成】第一部分是构建语义语料库，其中包含了构建名词动词搭配语料库和构建知网义原语料库；</br>
 数据来源：</br>
 1.[GoogleBooksNgramViewer](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html) </br>
