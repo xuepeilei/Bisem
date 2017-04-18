@@ -3,10 +3,8 @@ Created on 2017年4月13日
 
 @author: xue
 '''
-from correction.extract import *
-from correction.pd import *
-from correction.mi import *
-from correction.mark import *
+from Proofread import *
+from Proofread.pd import *
 
 #纠错模块
 def sememeCorr(sentence):
