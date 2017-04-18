@@ -4,7 +4,7 @@ Created on 2017年4月13日
 @author: xue
 构建义原表
 '''
-from corpora.database.com import cursor,connect
+from DB.com import *
 
 #将sen_def表中的义原合并导入到sememe表
 sememe_insert="insert into sememe(S) select DEF from sen_def group by DEF"

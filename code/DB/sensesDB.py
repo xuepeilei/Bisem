@@ -6,7 +6,7 @@ Created on 2017年4月5日
 构建义项语料库
 '''
 
-from corpora.database.com import *
+from DB.com import *
 import re
 
 with open("E:/clp/corpora/old/hownet_mini.txt",'r') as o:

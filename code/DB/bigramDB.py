@@ -12,9 +12,8 @@ Created on 2017年4月5日
 '''
 import csv
 import re
-from corpora.database.com import *
 from itertools import count
-
+from DB.com import *
 
 temp=[]
 

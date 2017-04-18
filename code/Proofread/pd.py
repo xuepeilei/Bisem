@@ -5,7 +5,7 @@ Created on 2017年4月14日
 计算聚合度PD值
 '''
 
-from corpora.database.com import *
+from DB.com import *
 import itertools
 
 #找到具有相同义原的词集合的函数

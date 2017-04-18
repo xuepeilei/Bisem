@@ -5,7 +5,7 @@ Created on 2017年4月14日
 
 返回互信息MI值
 '''
-from corpora.database.com import *
+from DB.com import *
 
 #
 def mi(x,y):
