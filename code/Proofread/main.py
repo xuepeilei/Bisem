@@ -3,11 +3,13 @@ Created on 2017年4月13日
 
 @author: xue
 '''
-from Proofread import *
+from Proofread.extract import *
 from Proofread.pd import *
+from Proofread.mi import *
+from Proofread.mark import *
 
 #纠错模块
-def sememeCorr(sentence):
+def corr(sentence):
     #名词-动词抽取
     sentence_extract=extract(sentence)
     
@@ -19,10 +21,8 @@ def sememeCorr(sentence):
             if pd(syn(i[0]),i[1]) < 1:
                 mark(sentence,i[0],i[1])
             
-     
-
 
 if __name__ == "__main__":
-    result=sememeCorr("那个男人戴着帽子和鞋子出门了。")
+    result=corr("那个男人戴着帽子和鞋子出门了。")
 
     

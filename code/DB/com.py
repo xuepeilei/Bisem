@@ -11,7 +11,7 @@ connect = pymysql.Connect(
     host='localhost',
     port=3306,
     user='root',
-    passwd='******',
+    passwd='einsam@163.com',
     db='test',
     charset='utf8'
 )
