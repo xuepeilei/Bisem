@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*- 
 '''
 Created on 2017年4月14日
 

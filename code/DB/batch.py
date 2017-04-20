@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*- 
 '''
 Created on 2017年4月19日
 
@@ -8,8 +9,7 @@ Created on 2017年4月19日
 import os
 import platform
 from DB.ngramDB import *
-from DB.sensesDB import *
-from DB.sememeDB import *
+
 
 def batch(address,n):
 #列出路径下文件
@@ -40,11 +40,7 @@ def batch(address,n):
           
         #删除csv文件
         os.system(exe_del)
-
-
     
-if __name__ == "__main__":
-    batch("sigram",1)
-    senses("./../../corpus/hownet.txt")
-    sememe()
+    
+
     
