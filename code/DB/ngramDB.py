@@ -22,9 +22,9 @@ def reconfiguration(location,n):
     #将数据导入到bigram或者sigram数据库
     for i in ngram:
         if n==1:
-            ngram_insert='insert into sigram(FIRST,FREQUENTNESS) values("%s",%d)'%(i[0],i[1])
+            ngram_insert='insert into sigram(FIRST,FREQUENTNESS) values("%s",%d)'%(i[0].encode('utf-8'),i[1])
         elif n==2:
-            ngram_insert='insert into bigram(FIRST,SECOND,FREQUENTNESS) values("%s","%s",%d)'%(i[0],i[1],i[2])
+            ngram_insert='insert into bigram(FIRST,SECOND,FREQUENTNESS) values("%s","%s",%d)'%(i[0].encode('utf-8'),i[1].encode('utf-8'),i[2])
         cursor.execute(ngram_insert)
     connect.commit()
 

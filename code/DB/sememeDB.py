@@ -27,7 +27,7 @@ def sememe():
             cursor.execute(sem_id)
             id=cursor.fetchone()
             #训练后插入到sem_w表中
-            sem_w_insert='insert into sem_w(SEM_ID,SEM_W) values(%d,"%s")'%(id[0],i[1])
+            sem_w_insert='insert into sem_w(SEM_ID,SEM_W) values(%d,"%s")'%(id[0],i[1].encode('utf-8'))
             cursor.execute(sem_w_insert)
     
     connect.commit()
