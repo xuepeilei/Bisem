@@ -13,7 +13,7 @@ from DB.ngramDB import *
 
 def batch(address,n):
 #列出路径下文件
-    corpus_path=os.path.join(os.getcwd(),"../../corpus/")
+    corpus_path=os.path.join(os.getcwd(),"../corpus/")
     corpus_path=os.path.join(corpus_path,address)
 
     corpus_list=os.listdir(corpus_path)
