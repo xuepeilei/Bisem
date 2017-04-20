@@ -7,12 +7,13 @@ Created on 2017年4月19日
 去噪模块
 '''
 import re
+import codecs
 
 #筛选函数：比如“雪国    1993    1    2    3”去噪以后输出['雪国','1'] 即：['词','频数']
 def csv_filter(csv_dir,n):
     result=[]
     #打开csv文件
-    with open(csv_dir,'r') as r:
+    with codecs.open(csv_dir,'r','utf-8') as r:
         for row in r.readlines():
             #按照空格进行切分
             context=re.split("[\s]",row.rstrip())
@@ -59,5 +60,3 @@ def merge(teamList,n):
     teamList_merge.append(teamList[-1])
         
     return(teamList_merge)
-
-    

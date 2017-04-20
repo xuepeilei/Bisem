@@ -27,5 +27,5 @@ def reconfiguration(location,n):
             ngram_insert="insert into bigram(FIRST,SECOND,FREQUENTNESS) values('%s','%s','%d')"%(i[0],i[1],i[2])
         cursor.execute(ngram_insert)
     connect.commit()
-    
+
         
