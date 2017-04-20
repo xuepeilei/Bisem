@@ -19,7 +19,7 @@ def reconfiguration(location,n):
     filter_list=csv_filter(location,n)
     ngram=merge(filter_list,n)
         
-    #将二元匹配对数据导入到bigram数据库
+    #将数据导入到bigram或者sigram数据库
     for i in ngram:
         if n==1:
             ngram_insert="insert into sigram(FIRST,FREQUENTNESS) values('%s','%d')"%(i[0],i[1])

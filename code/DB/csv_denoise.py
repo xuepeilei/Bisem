@@ -12,7 +12,7 @@ import re
 def csv_filter(csv_dir,n):
     result=[]
     #打开csv文件
-    with open(csv_dir,'r',encoding='UTF-8') as r:
+    with open(csv_dir,'r') as r:
         for row in r.readlines():
             #按照空格进行切分
             context=re.split("[\s]",row.rstrip())
