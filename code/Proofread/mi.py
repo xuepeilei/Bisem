@@ -12,9 +12,9 @@ import math
 #计算互信息MI值
 def mi(x,y):
     
-    bigram_xy="select FREQUENTNESS from bigram where FIRST='%s' and SECOND = '%s'"%(x,y)
-    sigram_x="select FREQUENTNESS from sigram where FIRST='%s'"%x
-    sigram_y="select FREQUENTNESS from sigram where FIRST='%s'"%y
+    bigram_xy='select FREQUENTNESS from bigram where FIRST="%s" and SECOND = "%s"'%(x,y)
+    sigram_x='select FREQUENTNESS from sigram where FIRST="%s"'%x
+    sigram_y='select FREQUENTNESS from sigram where FIRST="%s"'%y
     cursor.execute(bigram_xy)
     f_xy=cursor.fetchone()
     cursor.execute(sigram_x)

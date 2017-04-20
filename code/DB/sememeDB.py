@@ -9,25 +9,25 @@ from DB.com import *
 
 def sememe():
     #将sen_def表中的义原合并导入到sememe表
-    sememe_insert="insert into sememe(S) select DEF from sen_def group by DEF"
+    sememe_insert='insert into sememe(S) select DEF from sen_def group by DEF'
     cursor.execute(sememe_insert)
     connect.commit()
     
     #训练sigram表内的词到sem_w中
-    sigram_find="select * from sigram"
+    sigram_find='select * from sigram'
     cursor.execute(sigram_find)
     
     #遍历，其中i[1]是词
     for i in cursor.fetchall():
-        sen_def_find="select d.DEF from senses s,sen_def d where s.W_C='%s' and s.NO=d.NO_ID"%i[1]
+        sen_def_find='select d.DEF from senses s,sen_def d where s.W_C="%s" and s.NO=d.NO_ID'%i[1]
         cursor.execute(sen_def_find)
         for j in cursor.fetchall():
             #从sememe表找到该词的id
-            sem_id="select ID from sememe where S='%s'"%j[0]
+            sem_id='select ID from sememe where S="%s"'%j[0]
             cursor.execute(sem_id)
             id=cursor.fetchone()
             #训练后插入到sem_w表中
-            sem_w_insert="insert into sem_w(SEM_ID,SEM_W) values(%d,'%s')"%(id[0],i[1])
+            sem_w_insert='insert into sem_w(SEM_ID,SEM_W) values(%d,"%s")'%(id[0],i[1])
             cursor.execute(sem_w_insert)
     
     connect.commit()

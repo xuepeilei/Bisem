@@ -15,5 +15,5 @@ def mark(sentence,x,y):
     sentence_y=sentence_x.replace(y,mark_y)
     
     with codecs.open("/home/test.html","w",'utf-8') as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-        html="<html>%s</html>"%sentence_y
+        html='<html>"%s"</html>'%sentence_y
         w.write(html)

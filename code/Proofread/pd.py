@@ -15,13 +15,13 @@ def syn(x):
     syn_list=[]
     
     #找到义原
-    sen_def_x="select DEF from sen_def where NO_ID=(select NO from senses where W_C='%s')"%x
+    sen_def_x='select DEF from sen_def where NO_ID=(select NO from senses where W_C="%s")'%x
     cursor.execute(sen_def_x)
     
     #在sem_w表中找到全部词集合sem_w_synx
     for i in cursor.fetchall():
         #i[0]为义原
-        sem_w_synx="select SEM_W from sem_w where SEM_ID = (select ID from sememe where S='%s')"%i[0]
+        sem_w_synx='select SEM_W from sem_w where SEM_ID = (select ID from sememe where S="%s")'%i[0]
         cursor.execute(sem_w_synx)
         for j in cursor.fetchall():
             syn_list.append(j[0])
@@ -41,7 +41,7 @@ def pd(x,y):
     y_list=[]
     y_list.append(y)
     for i in itertools.product(x,y_list):
-        bigram_find="select * from bigram where FIRST='%s' and FIRST='%s'"%i
+        bigram_find='select * from bigram where FIRST="%s" and FIRST="%s"'%i
         cursor.execute(bigram_find)
         #计算∑(C_(x,y))
         if cursor.fetchone():num+=1
