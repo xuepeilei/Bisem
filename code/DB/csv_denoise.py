@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*- 
 '''
 Created on 2017年4月19日
 
@@ -7,37 +6,32 @@ Created on 2017年4月19日
 去噪模块
 '''
 import re
-import codecs
 
 #筛选函数：比如“雪国    1993    1    2    3”去噪以后输出['雪国','1'] 即：['词','频数']
 def csv_filter(csv_dir,n):
     result=[]
     regex=re.compile('[\u4e00-\u9FA0]')
     #打开csv文件
-    with codecs.open(csv_dir,'r','utf-8') as r:
+    with open(csv_dir,'r',encoding='utf-8') as r:
         for row in r.readlines():
             #按照空格进行切分
             context=re.split("[\s]",row.rstrip())
             #确定无残缺行
             if context.__len__() == (n+4):
-                #正则匹配中文词,并确保词的每一项都为中文
                 threshold=0
                 for i in range(n):
+                    #正则匹配中文词,并确保词的每一项都为中文
                     if re.match(regex,context[i]):
                         threshold+=1
-                    else:
-                        break
-                #当词中只含有中文时
+                    else:break
                 if threshold==n:
                     #将词和频数转存temp[]
                     temp=[]
-                    #根据n-gram模型的n值添加
                     for j in range(n):
                         temp.append(context[j])
                     temp.append(int(context[n+1]))
-                    #构造二维列表
-                    result.append(temp)
-                    
+                        #构造二维列表
+                    result.append(temp)                  
     return(result)
 
 #待解决：改造为hadoop合并
@@ -58,8 +52,7 @@ def merge(teamList,n):
         else:
             #到达下一组合并行的前一行时，将该行添加到teamList_merge[]中
             teamList_merge.append(teamList[line])
-    
     #将最后一行加入teamList_merge[]中
     teamList_merge.append(teamList[-1])
-        
+      
     return(teamList_merge)
