@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*- 
 '''
 Created on 2017年4月5日
 
@@ -9,17 +8,19 @@ Created on 2017年4月5日
 
 from DB.com import *
 import re
-import codecs
+
 
 def senses(address):
-    with codecs.open(address,'r','utf-8') as o:
+    regex=re.compile('[^\u4E00-\u9FA5]')
+    with open(address,'r',encoding='utf-8') as r:
+        #no:编号 w_c:词 g_c:词性 define:义原
         no=[]
         w_c=[]
         g_c=[]
         define=[]
         
         #逐行匹配
-        for line in o.readlines():
+        for line in r.readlines():
             if line.find("NO.")==0:
                 no.append(int(line[4:].strip()))
             elif line.find("W_C")==0:
@@ -29,6 +30,7 @@ def senses(address):
             elif line.find("DEF")==0:
                 sentence=line[4:].strip()
                 handle=re.split(",|\|",sentence)
+                #找到中文以及中文字符
                 define.append(handle[1::2])
         
         
@@ -37,7 +39,9 @@ def senses(address):
             senses_insert = 'insert into senses(NO,W_C,G_C) values(%d,"%s","%s")'%(no[i],w_c[i],g_c[i])
             cursor.execute(senses_insert)
             for j in range(len(define[i])):
-                sen_def_insert = 'insert into sen_def(NO_ID,DEF) values(%d,"%s")'%(no[i],define[i][j])
+                #提取义原中的中文成分
+                define_sub=regex.sub("",define[i][j])
+                sen_def_insert = 'insert into sen_def(NO_ID,DEF) values(%d,"%s")'%(no[i],define_sub)
                 cursor.execute(sen_def_insert)
     
         connect.commit()
