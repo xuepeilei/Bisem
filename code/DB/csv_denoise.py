@@ -12,7 +12,7 @@ import codecs
 #筛选函数：比如“雪国    1993    1    2    3”去噪以后输出['雪国','1'] 即：['词','频数']
 def csv_filter(csv_dir,n):
     result=[]
-    regex=re.compile(r'[\u4e00-\u9FA0]')
+    regex=re.compile('[\u4e00-\u9FA0]')
     #打开csv文件
     with codecs.open(csv_dir,'r','utf-8') as r:
         for row in r.readlines():
@@ -25,6 +25,8 @@ def csv_filter(csv_dir,n):
                 for i in range(n):
                     if re.match(regex,context[i]):
                         threshold+=1
+                    else:
+                        break
                 #当词中只含有中文时
                 if threshold==n:
                     #将词和频数转存temp[]

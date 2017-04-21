@@ -20,15 +20,14 @@ def batch(address,n):
     
     for i in corpus_list:
         #找到csv文件路径
-        csv_name=os.path.splitext(i)
-        exe_path=corpus_path+'/'+csv_name[0]
+        exe_path=corpus_path+"/"+i
 
         #判断操作系统
         if platform.system()=="Windows":
-            exe_unzip="expand "+corpus_path+"/"+i
+            exe_unzip="expand "+exe_path
             exe_del="del "+exe_path
         elif platform.system()=="Linux":
-            exe_unzip="unzip "+corpus_path+"/"+i+" -d "+corpus_path
+            exe_unzip="unzip "+exe_path+" -d "+corpus_path
             exe_del="rm -rf "+exe_path
             
         #解压zip文件
