@@ -5,5 +5,6 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/${PROJECT_DIR_NAME}/code</path>
 <path>/${PROJECT_DIR_NAME}/corpus</path>
+<path>/${PROJECT_DIR_NAME}/log</path>
 </pydev_pathproperty>
 </pydev_project>
