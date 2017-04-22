@@ -15,5 +15,5 @@ def mark(sentence,wrong):
 
     #输出
     with open("/home/xue/Bisem/test.html","w") as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-        html='<html>"%s"</html>'%sentence
+        html='<!DOCTYPE html><meta charset="UTF-8"><html>%s</html>'%sentence
         w.write(html)
