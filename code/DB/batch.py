@@ -10,10 +10,9 @@ import platform
 from DB.ngramDB import *
 
 
-def batch(address,n):
+def batch(corpus_path,n):
 #corpus_path为语料库路径
-    corpus_path=os.path.join(os.getcwd(),"../corpus/")
-    corpus_path=os.path.join(corpus_path,address)
+    
     corpus_list=os.listdir(corpus_path)
         
     for i in corpus_list:
