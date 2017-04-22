@@ -1,3 +1,9 @@
+drop database if exists bisem;
+
+create database bisem;
+
+use bisem;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
