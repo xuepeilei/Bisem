@@ -30,5 +30,5 @@ def mi(x,y):
         f_y=[1]
         
     mi=math.log2(f_xy[0]/(f_x[0]*f_y[0]))
-    
+
     return(mi)

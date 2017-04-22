@@ -74,7 +74,6 @@ def extract(sentence):
     list_dict.append(dict_1)
     list_dict.append(dict_2)
     
-    
     return(list_dict)
     
     

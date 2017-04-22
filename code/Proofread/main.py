@@ -3,6 +3,7 @@ Created on 2017年4月13日
 
 @author: xue
 '''
+import os
 from Proofread.extract import *
 from Proofread.pd import *
 from Proofread.mi import *
