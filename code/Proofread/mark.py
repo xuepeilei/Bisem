@@ -5,6 +5,7 @@ Created on 2017年4月14日
 
 标记模块
 '''
+import os
 
 def mark(sentence,wrong):
     #标记
@@ -12,8 +13,9 @@ def mark(sentence,wrong):
     for i in wrong:
         mark_wrong='<font color="#FF0000">'+i+'</font>'
         sentence=sentence.replace(i,mark_wrong)
-
+    
     #输出
-    with open("/home/xue/Bisem/test.html","w") as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    output_path=os.path.join(os.getcwd(),"../../index.html")
+    with open(output_path,"w") as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         html='<!DOCTYPE html><meta charset="UTF-8"><html>%s</html>'%sentence
         w.write(html)
