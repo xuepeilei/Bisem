@@ -15,9 +15,7 @@ def batch(address,n):
     corpus_path=os.path.join(os.getcwd(),"../corpus/")
     corpus_path=os.path.join(corpus_path,address)
     corpus_list=os.listdir(corpus_path)
-    
-    log_path=os.path.join(os.getcwd(),"../log/bisem.log")
-    
+        
     for i in corpus_list:
         #zip_path为zip包路径，csv_path为csv文件路径
         zip_path=corpus_path+"/"+i
@@ -27,8 +25,8 @@ def batch(address,n):
             exe_unzip="expand "+zip_path
             exe_del="del "+csv_path
         elif platform.system()=="Linux":
-            exe_unzip="nohup unzip "+zip_path+" -d "+corpus_path+" > "+log_path+" 2>&1 &"
-            exe_del="nohup rm -rf "+csv_path+" > "+log_path+" 2>&1 &"
+            exe_unzip="unzip "+zip_path+" -d "+corpus_path
+            exe_del="rm -rf "+csv_path
             
         #解压zip文件
         os.system(exe_unzip)
