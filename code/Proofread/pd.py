@@ -12,19 +12,21 @@ import itertools
 def syn(x):
     
     syn_list=[]
-    
+
     #找到义原
-    sen_def_x='select DEF from sen_def where NO_ID=(select NO from senses where W_C="%s")'%x
-    cursor.execute(sen_def_x)
+    sen_no_x='select NO from senses where W_C="%s"'%x
+    cursor.execute(sen_no_x)
+    for no in cursor.fetchall():
+        sen_def_x='select DEF from sen_def where NO_ID=%d'%no
+        cursor.execute(sen_def_x)
     
-    #在sem_w表中找到全部词集合sem_w_synx
-    for i in cursor.fetchall():
-        #i[0]为义原
-        sem_w_synx='select SEM_W from sem_w where SEM_ID = (select ID from sememe where S="%s")'%i[0]
-        cursor.execute(sem_w_synx)
-        for j in cursor.fetchall():
-            syn_list.append(j[0])
-            
+        #在sem_w表中找到全部词集合sem_w_synx
+        for i in cursor.fetchall():
+            #i[0]为义原
+            sem_w_synx='select SEM_W from sem_w where SEM_ID = (select ID from sememe where S="%s")'%i[0]
+            cursor.execute(sem_w_synx)
+            for j in cursor.fetchall():
+                syn_list.append(j[0])
     return(syn_list)
 
 #计算pd的函数:x,y均为列表
@@ -34,7 +36,7 @@ def pd(x,y):
         n=x.__len__()
     else:
         n=1
-       
+    print(n)
     #计算两个列表的笛卡尔积，并查找bigram表是否含有搭配对
     num=0
     y_list=[]

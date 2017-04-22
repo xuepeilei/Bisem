@@ -6,12 +6,14 @@ Created on 2017年4月14日
 标记模块
 '''
 
-def mark(sentence,x,y):
-    mark_x='<font color="#FF0000">'+x+'</font>'
-    mark_y='<font color="#FF0000">'+y+'</font>'
-    sentence_x=sentence.replace(x,mark_x)
-    sentence_y=sentence_x.replace(y,mark_y)
-    
-    with open("/home/test.html","w") as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-        html='<html>"%s"</html>'%sentence_y
+def mark(sentence,wrong):
+    #标记
+    #待解决：按次序替换出错词
+    for i in wrong:
+        mark_wrong='<font color="#FF0000">'+i+'</font>'
+        sentence=sentence.replace(i,mark_wrong)
+
+    #输出
+    with open("/home/xue/Bisem/test.html","w") as w:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        html='<html>"%s"</html>'%sentence
         w.write(html)
