@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 2017年4月14日
 
@@ -19,7 +20,6 @@ def syn(x):
     for no in cursor.fetchall():
         sen_def_x='select DEF from sen_def where NO_ID=%d'%no
         cursor.execute(sen_def_x)
-    
         #在sem_w表中找到全部词集合sem_w_synx
         for i in cursor.fetchall():
             #i[0]为义原
@@ -36,19 +36,21 @@ def pd(x,y):
         n=x.__len__()
     else:
         n=1
-
+    print(n)
     #计算两个列表的笛卡尔积，并查找bigram表是否含有搭配对
     num=0
     y_list=[]
     y_list.append(y)
     for i in itertools.product(x,y_list):
         bigram_find='select * from bigram where FIRST="%s" and FIRST="%s"'%i
+        print(bigram_find)
         cursor.execute(bigram_find)
         #计算∑(C_(x,y))
         if cursor.fetchone():num+=1
-    
+        else:num+=0
+     
     #计算PD值
-    pd=float(num/n)
+    pd=num/float(n)
 
     return(pd)
     

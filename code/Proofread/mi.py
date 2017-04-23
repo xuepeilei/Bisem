@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 2017年4月14日
 
@@ -14,13 +15,14 @@ def mi(x,y):
     bigram_xy='select FREQUENTNESS from bigram where FIRST="%s" and SECOND = "%s"'%(x,y)
     sigram_x='select FREQUENTNESS from sigram where FIRST="%s"'%x
     sigram_y='select FREQUENTNESS from sigram where FIRST="%s"'%y
+
     cursor.execute(bigram_xy)
     f_xy=cursor.fetchone()
     cursor.execute(sigram_x)
     f_x=cursor.fetchone()
     cursor.execute(sigram_y)
     f_y=cursor.fetchone()
-
+    
     #平滑方法
     if f_xy==None:
         f_xy=[1]
@@ -28,7 +30,10 @@ def mi(x,y):
         f_x=[1]
     if f_y==None:
         f_y=[1]
-        
-    mi=math.log2(f_xy[0]/(f_x[0]*f_y[0]))
-
+    
+    
+    #分母部分
+    denominator=f_xy[0]/float((f_x[0]*f_y[0]))
+    #计算mi互信息
+    mi=math.log(denominator,2)
     return(mi)
