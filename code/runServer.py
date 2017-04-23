@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import web
+web.config.debug = False
 from Proofread.corr import *
 
 render = web.template.render('www/')
