@@ -36,7 +36,7 @@ def pd(x,y):
         n=x.__len__()
     else:
         n=1
-    print(n)
+
     #计算两个列表的笛卡尔积，并查找bigram表是否含有搭配对
     num=0
     y_list=[]
