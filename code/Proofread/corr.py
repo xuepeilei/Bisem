@@ -7,7 +7,7 @@ import os
 from Proofread.extract import *
 from Proofread.pd import *
 from Proofread.mi import *
-from Proofread.mark import *
+from www.mark import *
 
 #纠错模块
 def corr(sentence):
@@ -30,10 +30,7 @@ def corr(sentence):
         
     #合并相同的出错词,并标记
     wrong_set=list(set(wrong))
-    mark(sentence,wrong_set)
     
-
-if __name__ == "__main__":
-    result=corr("那个男人戴着帽子和鞋子出门了。")
+    return(wrong_set)
 
     
