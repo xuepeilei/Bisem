@@ -43,7 +43,6 @@ def pd(x,y):
     y_list.append(y)
     for i in itertools.product(x,y_list):
         bigram_find='select * from bigram where FIRST="%s" and FIRST="%s"'%i
-        print(bigram_find)
         cursor.execute(bigram_find)
         #计算∑(C_(x,y))
         if cursor.fetchone():num+=1
