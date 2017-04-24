@@ -46,6 +46,6 @@ nohup python runServer.py >> ../log/bisem.log 2>&1 &
 
 <h2>测试用例</h2>
 错误语句：那个男人戴着帽子和鞋子出门了</br>
-查错语句：那个男人 `戴` 着帽子和 `鞋子出门` 了
+查错语句：那个男人<font color=red>戴</font>着帽子和<font color=red>鞋子出门</font>了
 
 <h2>详情请移步：http://www.bisem.top</h2>
