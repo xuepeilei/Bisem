@@ -1,5 +1,5 @@
 # 栢森（Bisem）中文语义查错系统
-# <h2>程序由两部分构成：</h2>
+<h2>程序由两部分构成：</h2>
 第一部分：构建语义语料库，其中包含了构建名词动词搭配语料库和构建知网义原语料库；数据来源：</br>
 1.[GoogleBooksNgramViewer](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html) </br>
 2.[旧版知网义原语料库](http://download.csdn.net/detail/firparks/9814417)</br>
@@ -33,12 +33,12 @@ nohup python runServer.py >> ../log/bisem.log 2>&1 &
 在浏览器内输入：http://服务器IP:8080
 </br>
 </br>
-* 另：</br>
+另：</br>
 错误1：ModuleNotFoundError: No module named 'xxx'</br>
 解决1：export PYTHONPATH=$PYTHONPATH:~/Bisem/code/
 </br>
 </br>
-* 注：</br>
+注：</br>
 程序中使用的python版本为python2.7</br>
 程序中使用的第三方包(如果本地没有,请使用pip安装)：jieba pymysql web.py</br>
 程序中两个重要文件的位置：~/Bisem/code/createDB.py  ~/Bisem/code/runServer.py </br>
@@ -48,4 +48,4 @@ nohup python runServer.py >> ../log/bisem.log 2>&1 &
 错误语句：那个男人戴着帽子和鞋子出门了</br>
 查错语句：那个男人 `戴` 着帽子和 `鞋子出门` 了</br>
 
-<h2>详情请移步：[www.bisem.top](http://www.bisem.top) </h2>
+<h2>详情请移步：http://www.bisem.top</h2>
