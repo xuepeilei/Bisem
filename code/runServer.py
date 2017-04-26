@@ -11,7 +11,7 @@ urls=('/', 'index',
 
 
 class index:
-    def GET(self):
+    def POST(self):
         return(render.index())
 
 
@@ -19,8 +19,8 @@ class show:
     def POST(self):
         i = web.input()
         sentence=i.article
-        corr_centence=corr(sentence)
-        return(render.show(corr_centence))
+        corr_sentence=corr(sentence)
+        return(render.show(corr_sentence))
 
 
 
