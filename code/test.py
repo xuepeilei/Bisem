@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Proofread.corr import *
 
 #测试函数
