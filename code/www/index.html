@@ -48,9 +48,7 @@ input[type=search] {
 	padding: 9px 10px 9px 32px;
 	width: 95%;
 	
-	-webkit-border-radius: 10em;
-	-moz-border-radius: 10em;
-	border-radius: 10em;
+	
 	
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
@@ -73,7 +71,31 @@ input:-moz-placeholder {
 input::-webkit-input-placeholder {
 	color: #999;
 }
-
+input[type="submit"] {
+    padding: 16px 24px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    border: none;
+	outline:none;
+    border-radius: 2px;
+    background:rgba(44, 138, 236, 0.88);
+	cursor:pointer;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+input[type="submit"]:hover{
+    background: #1f8af9;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-o-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-ms-transition:0.5s all;
+	}
 </style>
 
 </head>
@@ -81,11 +103,13 @@ input::-webkit-input-placeholder {
 <body>
 <h1>栢森语义查错系统</h1>
 
-<form method="post" action="show">
-	<input type="search" placeholder="说点什么吧~" name="article" >
+<form method="post" action="./show" style="width:1000px;">
+
+	<input type="search" placeholder="说点什么吧~" name="article" style="width:640px;float:left;">
+	<input type="submit" style="width:150px;float:left;"> 
 </form>
 
-<div style="text-align:center;clear:both;font-size:20px;margin:15% auto;">
+<div style="text-align:center;clear:both;font-size:20px;margin:400px auto 0;">
 <p>©2017 xuepeilei </p>
 <p><a href="http://wwww.bisem.top">www.bisem.top</a></p>
 </div>
