@@ -11,7 +11,7 @@ urls=('/', 'index',
 
 
 class index:
-    def POST(self):
+    def GET(self):
         return(render.index())
 
 
