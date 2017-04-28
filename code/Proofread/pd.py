@@ -45,7 +45,7 @@ def pd(x,y):
         bigram_find='select * from bigram where FIRST="%s" and FIRST="%s"'%i
         cursor.execute(bigram_find)
         #计算∑(C_(x,y))
-        if cursor.fetchone():num+=1
+        if cursor.fetchone()!=None:num+=1
         else:num+=0
      
     #计算PD值
