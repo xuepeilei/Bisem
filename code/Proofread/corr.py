@@ -33,7 +33,7 @@ def corr(sentence):
     else:wrong_set=list(set(wrong))
     #标记
     corr_sentence=mark(sentence,wrong_set)
-    
+    cursor.close()
     return(corr_sentence)
 
     
