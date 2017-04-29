@@ -5,13 +5,12 @@ Created on 2017年4月13日
 @author: xue
 '''
 import os
-from Proofread.extract import *
-from Proofread.pd import *
-from Proofread.mi import *
-from Proofread.mark import *
+from Patient.extract import *
+from Patient.pd import *
+from Patient.mi import *
 
 #纠错模块
-def corr(sentence):
+def gps(sentence):
     
     #名词-动词抽取
     sentence_extract=extract(sentence)
@@ -31,8 +30,7 @@ def corr(sentence):
     #合并相同的出错词
     if wrong.__len__()==0:wrong_set=[]
     else:wrong_set=list(set(wrong))
-    #标记
-    corr_sentence=mark(sentence,wrong_set)
-    return(corr_sentence)
+    
+    return(wrong_set)
 
     

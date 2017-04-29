@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import web
+from Patient.gps import *
+from Patient.mark import *
+
 web.config.debug = False
-from Proofread.corr import *
 
 render = web.template.render('www/')
 
@@ -19,8 +21,9 @@ class show:
     def POST(self):
         i = web.input()
         sentence=i.article
-        corr_sentence=corr(sentence)
-        return(render.show(corr_sentence))
+        wrong_set=gps(sentence)
+        mark_sentence=mark(sentence,wrong_set)
+        return(render.show(mark_sentence))
 
 
 

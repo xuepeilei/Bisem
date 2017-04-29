@@ -16,5 +16,13 @@ connect = pymysql.Connect(
     db='bisem',
     charset='utf8'
 )
-
+if (not connect.open):
+    connect = pymysql.Connect(
+        host='localhost',
+        port=3306,
+        user='root',
+        passwd='******',
+        db='bisem',
+        charset='utf8'
+    )
 cursor = connect.cursor()
