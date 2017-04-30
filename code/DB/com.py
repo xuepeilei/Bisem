@@ -9,19 +9,19 @@ Created on 2017年4月5日
 import pymysql
 
 connect = pymysql.Connect(
-    host='localhost',
+    host='47.93.62.85',
     port=3306,
     user='root',
-    passwd='******',
+    passwd='einsam@163.com',
     db='bisem',
     charset='utf8'
 )
 if (not connect.open):
     connect = pymysql.Connect(
-        host='localhost',
+        host='47.93.62.85',
         port=3306,
         user='root',
-        passwd='******',
+        passwd='einsam@163.com',
         db='bisem',
         charset='utf8'
     )

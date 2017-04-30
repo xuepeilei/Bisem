@@ -2,8 +2,9 @@
 import web
 from Patient.gps import *
 from Patient.mark import *
+from Cure.knn import *
 
-web.config.debug = False
+web.config.debug = True
 
 render = web.template.render('www/')
 
@@ -20,10 +21,14 @@ class index:
 class show:
     def POST(self):
         i = web.input()
+        cure=i.get("cure")
         sentence=i.article
-        wrong_set=gps(sentence)
-        mark_sentence=mark(sentence,wrong_set)
-        return(render.show(mark_sentence))
+        cure_sentence=[]
+        wrong_list=gps(sentence)
+        mark_sentence=mark(sentence,wrong_list)
+        if cure=="on":
+            cure_sentence=knn(wrong_list)
+        return(render.show(mark_sentence,cure_sentence,cure))
 
 
 

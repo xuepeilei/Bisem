@@ -12,7 +12,7 @@ from Patient.mi import *
 #纠错模块
 def gps(sentence):
     
-    #名词-动词抽取
+    #名词动词搭配对抽取
     sentence_extract=extract(sentence)
     
     #遍历所有搭配对
@@ -22,15 +22,11 @@ def gps(sentence):
         #判断互信息MI是否小于τ
         if mi(j[0],j[1])<1:
             #判断聚合度PD是否小于λ
-            if pd(syn(j[0]),j[1]) < 1:
+            if pd(syn(j[0],i),j[1]) < 1:
                 wrong.append(j[0])
                 wrong.append(j[1])
         i=1
-        
-    #合并相同的出错词
-    if wrong.__len__()==0:wrong_set=[]
-    else:wrong_set=list(set(wrong))
     
-    return(wrong_set)
+    return(wrong)
 
     

@@ -1,7 +1,14 @@
-$def with (mark_sentence)
+$def with (mark_sentence,cure_sentence,cure)
 
 <html>
 <div style="text-align:center;clear:both;font-size:30px;margin:15% auto;">
-$:mark_sentence
+<p>查错结果：$:mark_sentence </p>
 </div>
+
+$if cure!=None:
+	<div style="text-align:center;clear:both;font-size:15px;">
+	<p style="color:#0000FF;font-size:25px;">纠错建议</p>
+	$for i in cure_sentence:
+		<p>$i</p>
+	</div>
 </html>
