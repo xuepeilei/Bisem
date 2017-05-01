@@ -27,7 +27,7 @@ def find_def(words):
     senses_no='select NO from senses where W_C="%s" and (G_C="N" or G_C="V")'%words
     cursor.execute(senses_no)
     for i in cursor.fetchall():
-        senses_def='select DEF from sen_def where NO_ID=%d'%int(i[0])
+        senses_def='select DEF from sen_def where NO_ID=%d'%i[0]
         cursor.execute(senses_def)
         for j in cursor.fetchall():
             sememe_list.append(j[0])
