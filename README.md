@@ -1,4 +1,4 @@
-# 栢森（Bisem）中文语义查错系统
+# Bisem中文语义查错系统
 <h2>简介：</h2>
 第一部分：构建语义语料库，其中包含了构建名词动词搭配语料库和构建知网义原语料库；数据来源：</br>
 1.GoogleBooksNgramViewer：http://storage.googleapis.com/books/ngrams/books/datasetsv2.html </br>
