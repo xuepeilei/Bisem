@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import web
 from Patient.gps import *
 from Patient.mark import *
