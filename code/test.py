@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Patient.gps import *
 from Patient.mark import *
 import pymysql
