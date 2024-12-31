@@ -7,7 +7,7 @@ use bisem;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for bigram
+-- Table structure
 -- ----------------------------
 DROP TABLE IF EXISTS `bigram`;
 CREATE TABLE `bigram` (
